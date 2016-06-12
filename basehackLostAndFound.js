@@ -317,15 +317,15 @@
 	            var clong = context.simpledb.roomleveldata.database[2];
 	            
 	            if(clat==""&&clong==""){
-	                clat = parseFloat("3291.42");
-	                clong = parseFloat("2424.23");
+	                var clatf = parseFloat("3291.42");
+	                var clongf = parseFloat("2424.23");
 	                context.sendResponse("helloo");
 	                for(var i=0; i<data.length; i++){
-	                    var dLat = parseFloat(data[i].lat);
-	                    var dLong = parseFloat(data[i].long);
-	                    context.sendResponse(dLat+" "+dLong+" "+i);
-	                    context.sendResponse(clat.toString());
-	                    var d = dist(dLat, dLong, clat, clong);
+	                    var lat = parseFloat(data[i].lat);
+	                    var long = parseFloat(data[i].long);
+	                    context.sendResponse(lat+" "+long+" "+i);
+	                    context.sendResponse(lat.toString());
+	                    var d = dist(lat, long, clatf, clongf);
 	                    ds[i] = d;
 	                    context.sendResponse("hiiii");
 	                }
